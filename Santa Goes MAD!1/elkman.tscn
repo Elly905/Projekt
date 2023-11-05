@@ -1,0 +1,221 @@
+[gd_scene load_steps=30 format=3 uid="uid://cin1r74olq7tb"]
+
+[ext_resource type="Script" path="res://Elkman.gd" id="1_gk8l0"]
+[ext_resource type="Texture2D" uid="uid://cs8tpqwbnns1s" path="res://Monsters/2 Elkman/Elkman_attack.png" id="2_kyifs"]
+[ext_resource type="Texture2D" uid="uid://cm7qncxlnbmmh" path="res://Monsters/2 Elkman/Elkman_death.png" id="3_4j018"]
+[ext_resource type="Texture2D" uid="uid://dackbmnoi5glk" path="res://Monsters/2 Elkman/Elkman_idle.png" id="4_ctyye"]
+[ext_resource type="Texture2D" uid="uid://ctw5x0xn1llci" path="res://Monsters/2 Elkman/Elkman_walk.png" id="5_n2wum"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_52eai"]
+radius = 9.0
+height = 36.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww42k"]
+atlas = ExtResource("2_kyifs")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxqd7"]
+atlas = ExtResource("2_kyifs")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdykj"]
+atlas = ExtResource("2_kyifs")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxgh4"]
+atlas = ExtResource("2_kyifs")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0grs"]
+atlas = ExtResource("2_kyifs")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uqtj"]
+atlas = ExtResource("2_kyifs")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0fcr"]
+atlas = ExtResource("3_4j018")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm8dw"]
+atlas = ExtResource("3_4j018")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7m6y"]
+atlas = ExtResource("3_4j018")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_438vk"]
+atlas = ExtResource("3_4j018")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mujm"]
+atlas = ExtResource("4_ctyye")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fs1t"]
+atlas = ExtResource("4_ctyye")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcsfb"]
+atlas = ExtResource("4_ctyye")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gplxj"]
+atlas = ExtResource("4_ctyye")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1vcc"]
+atlas = ExtResource("5_n2wum")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utwjn"]
+atlas = ExtResource("5_n2wum")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_briaf"]
+atlas = ExtResource("5_n2wum")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6yd"]
+atlas = ExtResource("5_n2wum")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igvr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww42k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxqd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdykj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxgh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0grs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uqtj")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0fcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm8dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7m6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_438vk")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mujm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fs1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcsfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gplxj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1vcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utwjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_briaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6yd")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grjyh"]
+radius = 97.0052
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wefxj"]
+size = Vector2(16, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ys3nd"]
+radius = 19.2354
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycfok"]
+radius = 15.0
+height = 34.0
+
+[node name="Elkman" type="CharacterBody2D"]
+script = ExtResource("1_gk8l0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_52eai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, -24)
+scale = Vector2(1.0625, 1.02083)
+sprite_frames = SubResource("SpriteFrames_igvr1")
+animation = &"Attack"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_grjyh")
+
+[node name="ElkmanDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElkmanDeath"]
+position = Vector2(1, -30.5)
+shape = SubResource("RectangleShape2D_wefxj")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(-1, -18)
+shape = SubResource("CircleShape2D_ys3nd")
+
+[node name="ElkmanAttack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElkmanAttack"]
+position = Vector2(-1, -15)
+shape = SubResource("CapsuleShape2D_ycfok")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="ElkmanDeath" to="." method="_on_elkman_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
+[connection signal="body_entered" from="ElkmanAttack" to="." method="_on_elkman_attack_body_entered"]
+[connection signal="body_exited" from="ElkmanAttack" to="." method="_on_elkman_attack_body_exited"]

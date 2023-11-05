@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhkcun3hq5wkg"]
+
+[ext_resource type="Texture2D" uid="uid://bhnuannje2vhd" path="res://World/tileset/Tiles/15.png" id="1_opt05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlw8s"]
+size = Vector2(281, 45)
+
+[sub_resource type="Animation" id="Animation_8cbxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u5frc"]
+resource_name = "left_right"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(320, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5tfmc"]
+resource_name = "moving"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0001, 1.0002, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(331, -2), Vector2(330, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fl0bf"]
+resource_name = "reset"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bp8pt"]
+_data = {
+"RESET": SubResource("Animation_8cbxg"),
+"left_right": SubResource("Animation_u5frc"),
+"moving": SubResource("Animation_5tfmc"),
+"reset": SubResource("Animation_fl0bf")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_jlw8s")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(2.1875, 0.473118)
+texture = ExtResource("1_opt05")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+autoplay = "moving"
+libraries = {
+"": SubResource("AnimationLibrary_bp8pt")
+}

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ly111u3m1as"]
+
+[ext_resource type="Texture2D" uid="uid://b0chywsv3iy3t" path="res://World/BG rota.png" id="1_3ydpq"]
+
+[sub_resource type="GDScript" id="GDScript_645sc"]
+script/source = "extends ParallaxBackground
+
+
+var scrolling_speed = 100
+
+func _process(delta):
+	scroll_offset.x -= scrolling_speed * delta
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_peqn7"]
+load_path = "res://.godot/imported/BG rota.png-3f2970af79aae29073f0da8723143f73.ctex"
+
+[node name="BG" type="ParallaxBackground"]
+scroll_offset = Vector2(1, 1)
+script = SubResource("GDScript_645sc")
+
+[node name="Bg" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(3392, 0)
+
+[node name="Bg 1" type="Sprite2D" parent="Bg"]
+position = Vector2(1184, 544)
+scale = Vector2(1.90444, 1.79899)
+texture = SubResource("CompressedTexture2D_peqn7")
+
+[node name="BgRota" type="Sprite2D" parent="Bg"]
+position = Vector2(7984, 536)
+scale = Vector2(1.88444, 1.78681)
+texture = ExtResource("1_3ydpq")

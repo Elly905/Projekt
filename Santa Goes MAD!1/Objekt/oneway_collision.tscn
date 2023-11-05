@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d314o3bhdct4u"]
+
+[ext_resource type="Texture2D" uid="uid://bhnuannje2vhd" path="res://World/tileset/Tiles/15.png" id="1_eqv5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yip1u"]
+size = Vector2(774, 16)
+
+[node name="oneway collision" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.05469, 0.182796)
+texture = ExtResource("1_eqv5n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_yip1u")
+one_way_collision = true
